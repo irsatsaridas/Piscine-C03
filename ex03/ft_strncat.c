@@ -21,7 +21,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	counts = 0;
 	while (dest[countd] != '\0')
 		countd++;
-	while (counts < n)
+	while (counts < nb)
 	{
 		if (src[counts] != '\0')
 		{
