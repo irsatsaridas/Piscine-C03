@@ -6,7 +6,7 @@
 /*   By: isaridas <isaridas@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 19:09:39 by isaridas          #+#    #+#             */
-/*   Updated: 2022/07/28 21:12:17 by isaridas         ###   ########.fr       */
+/*   Updated: 2022/08/02 00:45:55 by isaridas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,11 @@ int	ft_strcmp(char *s1, char *s2)
 	int	count;
 
 	count = 0;
-	while (s1[count] != '\0' && s2[count] != '\0')
+	while (s1[count] != '\0' || s2[count] != '\0')
 	{
 		if (s1[count] != s2[count])
 			return (s1[count] - s2[count]);
 		count++;
 	}
-	if (s1[count] == '\0' && s2[count] != '\0')
-		return (' ' - s2[count]);
-	else if (s1[count] != '\0' && s2[count] == '\0')
-		return (s1[count] - ' ');
 	return (0);
 }
