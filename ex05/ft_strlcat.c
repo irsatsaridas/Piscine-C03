@@ -30,12 +30,17 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 
 	go_src = 0;
 	go_dest = ft_strlen(dest);
-	while (go_dest < size - 1)
+	if (size < 1)
+		return (ft_strlen(src) + size);
+	while (src[go_src] && go_dest < size - 1)
 	{
 		dest[go_dest] = src[go_src];
 		go_dest++;
 		go_src++;
 	}
 	dest[go_dest] = '\0';
-	return (go_dest);
+	if (size < ft_strlen(dest))
+		return (ft_strlen(src) + size);
+	else
+		return (go_dest);
 }
