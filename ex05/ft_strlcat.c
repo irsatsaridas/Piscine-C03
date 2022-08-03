@@ -24,22 +24,26 @@ unsigned int	ft_strlen(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	go_dest;
-	unsigned int	go_src;
+	unsigned int    i;
+	unsigned int    j;
+	unsigned int	l_dest;
+	unsigned int	l_src;
 
-	go_src = 0;
-	go_dest = ft_strlen(dest);
+	i = ft_strlen(dest);
+	j = 0;
+	l_src = ft_strlen(src);
+	l_dest = ft_strlen(dest);
 	if (size < 1)
-		return (ft_strlen(src) + size);
-	while (src[go_src] && go_dest < size - 1)
+		return (l_src + size);
+	while (src[j] && i < size - 1)
 	{
-		dest[go_dest] = src[go_src];
-		go_dest++;
-		go_src++;
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	dest[go_dest] = '\0';
-	if (size < ft_strlen(dest))
-		return (ft_strlen(src) + size);
+	dest[i] = '\0';
+	if (size < l_dest)
+		return (l_src + size);
 	else
-		return (go_dest);
+		return (l_dest + l_src);
 }
