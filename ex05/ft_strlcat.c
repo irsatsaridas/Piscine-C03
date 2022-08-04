@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 unsigned int	ft_strlen(char *str)
 {
 	unsigned int	len;
